@@ -1,5 +1,6 @@
 img = "";
-status = "";
+objectDetector = "";
+status1 = "";
 objects = [];
 function setup() {
     createCanvas(630, 420);
@@ -12,7 +13,7 @@ function preload() {
 }
 function draw() {
     image(img, 0, 0, 640, 420);
-    if (status != "") {
+    if (status1 != "") {
         for (var i = 0; i < objects.length; i++) {
             document.getElementById("status").innerHTML = "Status : Object Detected"; 
             fill(255, 0, 0); 
@@ -26,7 +27,7 @@ function draw() {
 }
 function modelLoaded() {
     console.log("Model loaded")
-    status = true;
+    status1 = true;
     objectDetector.detect(img, gotResult);
 }
 function gotResult(results, error) {
